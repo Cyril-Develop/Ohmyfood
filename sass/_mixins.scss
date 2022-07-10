@@ -1,10 +1,12 @@
-// Animation
+// Animations
 
 @mixin keyframes($animation-name) {
     @keyframes #{$animation-name} {
       @content;
     }
   }
+
+// Loader
 
 @mixin animation($str) {
     animation: #{$str};

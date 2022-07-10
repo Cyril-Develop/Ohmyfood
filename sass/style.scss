@@ -1,12 +1,31 @@
+// Import
+
+@import './_variables';
+@import './_mixins';
+@import './_placeholders';
+
 *, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-@import './_variables';
-@import './_mixins';
-@import './_placeholders';
+html{
+    font-size: 10px;
+}
+
+// Utilities
+
+h1,h2,h3{
+    font-family: $title-font;
+    font-size: clamp(3rem, 4vw, 3.5rem);
+    font-weight: 900;
+}
+
+p, i, button{
+    font-family: $text-font;
+    font-size: clamp(2.1rem, 4vw, 2.5rem);
+}
 
 // Loader
 
@@ -14,14 +33,15 @@
     position: absolute;
     width: 100%;
     height: 100vh;
+    pointer-events:none;
     background-color: #1c1b1b;
     @extend %flex-center;
-    @include animation('visibility 8s ease-in-out forwards');
+    @include animation('visibility 3s ease-in-out forwards');
         &__txt{
             font-size: 30px;
             letter-spacing: 1px;
             color: #737373;
-            @include animation('txt 2s linear infinite');
+            @include animation('txt 1s linear infinite');
         }
         &__ring{  
             position: absolute;
@@ -37,7 +57,42 @@
                     right: 0;
                     border-radius: 50%;
                     border: 10px solid transparent;
-                    @include animation('rotate 2s linear infinite');
+                    @include animation('rotate 1s linear infinite');
                 }
+        }
+}
+
+.header-logo{
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
+    @extend %flex-center;
+}
+
+.main-location{
+    height: 70px;
+    background-color: #0000001a;
+    @extend %flex-center;
+        &__logo{
+            margin-right: 20px;
+        }
+}
+
+.main-description{
+    @extend %flex-center;
+    flex-direction: column;
+    padding: 40px 0 50px;
+    text-align: center;
+    background-color: #0000000e;
+        &__text{
+            margin: 15px 0 30px;
+        }
+        &__btn{
+            padding: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
         }
 }
