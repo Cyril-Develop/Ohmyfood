@@ -19,7 +19,7 @@
 }
 
 @include keyframes(txt){
-    50%{
+    30%{
         opacity: 0;
     }
 }
@@ -44,8 +44,23 @@
 
 // Center
 
-@mixin flex-center {
+@mixin flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
+};
+
+// @mixin button-style{
+//     padding: 20px;
+//     border: none;
+//     border-radius: 30px;
+//     font-weight: 900;
+//     letter-spacing: 1px;
+//     cursor: pointer;
+//     color: white;
+//     background-image: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+// }
+
+@mixin button-hover{
+    box-shadow: 5px 5px 8px black ;
 }

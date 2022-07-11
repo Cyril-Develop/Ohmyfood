@@ -1,7 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
-
 *, ::before, ::after{
     margin: 0;
     padding: 0;
@@ -15,20 +14,25 @@ html{
 //******************** Utilities
 
 h1,h2{
-    font-family: $title-font;
+    font-family: $text-font;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 900;
+    
 }
 
 h3{
-    font-family: $title-font;
+    font-family: $text-font;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
 }
 
-p, i, button{
+p, a, i, button{
     font-family: $text-font;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+a{
+    text-decoration: none;
 }
 
 img{
@@ -41,18 +45,19 @@ img{
 //******************** Loader
 
 .loader {
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     width: 100%;
     height: 100vh;
     pointer-events:none;
-    background-color: #1c1b1b;
+    background-color: #000000;
     @include flex-center;
-    @include animation('visibility 3s ease-in-out forwards');
+    @include animation('visibility 1s ease forwards');
         &__txt{
             font-size: 30px;
             letter-spacing: 1px;
-            color: #000000;
-            @include animation('txt 2s linear infinite');
+            color: #ffffff;
+            @include animation('txt 0.5s linear infinite');
         }
         &__ring{  
             position: absolute;
@@ -68,7 +73,7 @@ img{
                     right: 0;
                     border-radius: 50%;
                     border: 10px solid transparent;
-                    @include animation('rotate 1s linear infinite');
+                    @include animation('rotate .5s linear infinite');
                 }
         }
 }
@@ -98,21 +103,28 @@ img{
 // Section main-description
 
 .main-description{
-    @include flex-center;
     flex-direction: column;
     padding: 40px 0 50px;
     text-align: center;
     background-color: #0000000e;
+    @include flex-center;
         &__text{
             margin: 15px 0 30px;
         }
         &__btn{
+            // @include button-style;
             padding: 20px;
             border: none;
             border-radius: 30px;
+            font-weight: 900;
+            letter-spacing: 1px;
             cursor: pointer;
             color: white;
-            background-image: linear-gradient(to bottom, $color-secondary, green 80%);
+            background-image: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+            transition: all 0.3s ease-in-out;
+                &:hover{
+                    @include button-hover;
+                }
         }
 }
 
@@ -129,7 +141,6 @@ img{
 }
 
 .main-process__step{
-    @include flex-center;
     flex-direction: row-reverse;
     position: relative;
     width: 95%;
@@ -137,7 +148,16 @@ img{
     margin-bottom: 20px;
     padding: 15px 0;
     border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
+    @include flex-center;
+        &:hover{
+            background-color: #9256dc22;
+                figure i{
+                    color: $color-primary;
+                }
+        }
         figure{
             margin-right: 5%;
         }
@@ -158,39 +178,99 @@ img{
 // Section main-restaurants
 
 .main-restaurant{
-    display: flex;
-    flex-direction: column;
     padding: 50px 20px 40px;
     background-color: #0000000e;
         h2{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        &__cards{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 50px;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 2000px;
         }
 }
 
 .main-restaurant__card{
     width: 100%;
-    max-width: 500px;
+    max-width: 650px;
     height: 300px;
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    color: black;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
         figure{
             height: 70%;
+            @include flex-center;
         }
 }
 
-.main-restaurant__card__info{
+.card__info{
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 30%;
     padding: 10px 20px;
-        figure i{
-            cursor: pointer;
+        figure i:hover{
+            // a faire
         }
 }
 
+// Footer
+
+footer{
+    padding: 30px 20px 40px;
+    color: white;
+    background-color: #333;
+        h2{
+            margin-bottom: 20px;
+        }
+}
+
+.footer-nav__item{
+    margin: 10px 0;
+    list-style-type: none;
+    figure:nth-child(1),
+    figure:nth-child(2){
+        float: left;
+        width: 35px;
+    }
+    a{
+        color: white;
+    }
+}
 
 // Media queries
 
+@media screen and (min-width: 1000px) {
+
+    // Section main-process
+
+    .main-process h2{
+        align-self:center;
+    }
+
+    // Section main-restaurants
+    
+    .main-restaurant h2{
+        text-align: center;
+    }
+
+    // Footer
+
+    footer h2{
+        text-align: center;
+    }
+
+    .footer-nav{
+        display: flex;
+        justify-content: center;
+            &__item{
+                margin: 0 20px;
+            }
+    }
+}
