@@ -25,7 +25,7 @@
     border-bottom-color: #99E2D0;
   }
 }
-.main-description, .main-location, .header-logo, .loader {
+.main-process__step__number, .main-process__step, .main-process, .main-description, .main-location, .header-logo, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,13 +43,13 @@ html {
 
 h1, h2, h3 {
   font-family: Shrikhand;
-  font-size: clamp(3rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 900;
 }
 
 p, i, button {
   font-family: Roboto;
-  font-size: clamp(2.1rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
 .loader {
@@ -63,8 +63,8 @@ p, i, button {
 .loader__txt {
   font-size: 30px;
   letter-spacing: 1px;
-  color: #737373;
-  animation: txt 1s linear infinite;
+  color: #000000;
+  animation: txt 2s linear infinite;
 }
 .loader__ring {
   position: absolute;
@@ -114,6 +114,44 @@ p, i, button {
   cursor: pointer;
   color: white;
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+}
+
+.main-process {
+  flex-direction: column;
+  padding: 50px 20px 40px;
+}
+.main-process h2 {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+.main-process__step {
+  flex-direction: row-reverse;
+  position: relative;
+  width: 95%;
+  max-width: 691px;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
+}
+.main-process__step figure {
+  margin-right: 5%;
+}
+.main-process__step__number {
+  position: absolute;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: white;
+  background-color: #9356DC;
+}
+
+.main-restaurants {
+  padding: 50px 20px 40px;
+  background-color: rgba(0, 0, 0, 0.0549019608);
 }
 
 /*# sourceMappingURL=style.css.map */

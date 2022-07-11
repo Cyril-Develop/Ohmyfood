@@ -1,4 +1,4 @@
-// Import
+//******************** Import
 
 @import './_variables';
 @import './_mixins';
@@ -14,20 +14,20 @@ html{
     font-size: 10px;
 }
 
-// Utilities
+//******************** Utilities
 
 h1,h2,h3{
     font-family: $title-font;
-    font-size: clamp(3rem, 4vw, 3.5rem);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 900;
 }
 
 p, i, button{
     font-family: $text-font;
-    font-size: clamp(2.1rem, 4vw, 2.5rem);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
-// Loader
+//******************** Loader
 
 .loader {
     position: absolute;
@@ -40,8 +40,8 @@ p, i, button{
         &__txt{
             font-size: 30px;
             letter-spacing: 1px;
-            color: #737373;
-            @include animation('txt 1s linear infinite');
+            color: #000000;
+            @include animation('txt 2s linear infinite');
         }
         &__ring{  
             position: absolute;
@@ -62,12 +62,18 @@ p, i, button{
         }
 }
 
+//******************** Header
+
 .header-logo{
     height: 80px;
     width: 100%;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
     @extend %flex-center;
 }
+
+//******************** Main
+
+// Section main-location
 
 .main-location{
     height: 70px;
@@ -77,6 +83,8 @@ p, i, button{
             margin-right: 20px;
         }
 }
+
+// Section main-description
 
 .main-description{
     @extend %flex-center;
@@ -95,4 +103,50 @@ p, i, button{
             color: white;
             background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
         }
+}
+
+// Section main-process
+
+.main-process{
+    @extend %flex-center;
+    flex-direction: column;
+    padding: 50px 20px 40px;
+        h2{
+            align-self: flex-start;
+            margin-bottom: 20px;
+        }
+}
+
+.main-process__step{
+    @extend %flex-center;
+    flex-direction: row-reverse;
+    position: relative;
+    width: 95%;
+    max-width: 691px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
+        figure{
+            margin-right: 5%;
+        }
+        &__number{
+            @extend %flex-center;
+            position: absolute;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: white;
+            background-color: $color-primary;
+        }
+       
+}
+
+// Section main-restaurants
+
+.main-restaurants{
+    padding: 50px 20px 40px;
+    background-color: #0000000e;
 }
