@@ -25,12 +25,6 @@
     border-bottom-color: #99E2D0;
   }
 }
-.main-process__step__number, .main-process__step, .main-process, .main-description, .main-location, .header-logo, .loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -42,19 +36,19 @@ html {
 }
 
 h1, h2 {
-  font-family: Shrikhand;
+  font-family: "Shrikhand", cursive;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 900;
 }
 
 h3 {
-  font-family: Shrikhand;
+  font-family: "Shrikhand", cursive;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
 }
 
 p, i, button {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
@@ -71,6 +65,9 @@ img {
   height: 100vh;
   pointer-events: none;
   background-color: #1c1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: visibility 3s ease-in-out forwards;
 }
 .loader__txt {
@@ -101,17 +98,26 @@ img {
   height: 80px;
   width: 100%;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-location {
   height: 70px;
   background-color: rgba(0, 0, 0, 0.1019607843);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-location__logo {
   margin-right: 20px;
 }
 
 .main-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 40px 0 50px;
   text-align: center;
@@ -126,10 +132,13 @@ img {
   border-radius: 30px;
   cursor: pointer;
   color: white;
-  background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  background-image: linear-gradient(to bottom, #FF79DA, green 80%);
 }
 
 .main-process {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 50px 20px 40px;
 }
@@ -139,6 +148,9 @@ img {
 }
 
 .main-process__step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row-reverse;
   position: relative;
   width: 95%;
@@ -152,6 +164,9 @@ img {
   margin-right: 5%;
 }
 .main-process__step__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: -15px;
   width: 30px;

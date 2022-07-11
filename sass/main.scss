@@ -1,8 +1,6 @@
-//******************** Import
+@import "./utils/variables";
+@import "./utils/mixins";
 
-@import './_variables';
-@import './_mixins';
-@import './_placeholders';
 
 *, ::before, ::after{
     margin: 0;
@@ -48,7 +46,7 @@ img{
     height: 100vh;
     pointer-events:none;
     background-color: #1c1b1b;
-    @extend %flex-center;
+    @include flex-center;
     @include animation('visibility 3s ease-in-out forwards');
         &__txt{
             font-size: 30px;
@@ -81,7 +79,7 @@ img{
     height: 80px;
     width: 100%;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
-    @extend %flex-center;
+    @include flex-center;
 }
 
 //******************** Main
@@ -91,7 +89,7 @@ img{
 .main-location{
     height: 70px;
     background-color: #0000001a;
-    @extend %flex-center;
+    @include flex-center;
         &__logo{
             margin-right: 20px;
         }
@@ -100,7 +98,7 @@ img{
 // Section main-description
 
 .main-description{
-    @extend %flex-center;
+    @include flex-center;
     flex-direction: column;
     padding: 40px 0 50px;
     text-align: center;
@@ -114,14 +112,14 @@ img{
             border-radius: 30px;
             cursor: pointer;
             color: white;
-            background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+            background-image: linear-gradient(to bottom, $color-secondary, green 80%);
         }
 }
 
 // Section main-process
 
 .main-process{
-    @extend %flex-center;
+    @include flex-center;
     flex-direction: column;
     padding: 50px 20px 40px;
         h2{
@@ -131,7 +129,7 @@ img{
 }
 
 .main-process__step{
-    @extend %flex-center;
+    @include flex-center;
     flex-direction: row-reverse;
     position: relative;
     width: 95%;
@@ -144,7 +142,7 @@ img{
             margin-right: 5%;
         }
         &__number{
-            @extend %flex-center;
+            @include flex-center;
             position: absolute;
             left: -15px;
             width: 30px;
@@ -196,9 +194,3 @@ img{
 
 // Media queries
 
-@media screen and (min-width) {
-    
-
-
-
-}
