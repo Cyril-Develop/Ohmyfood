@@ -138,7 +138,7 @@ img {
   letter-spacing: 1px;
   cursor: pointer;
   color: white;
-  background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   transition: all 0.3s ease-in-out;
 }
 .main-description__btn:hover {
@@ -175,12 +175,10 @@ img {
 .main-process__step:hover {
   background-color: rgba(146, 86, 220, 0.1333333333);
 }
-.main-process__step:hover figure i {
-  color: #9356DC;
-}
-.main-process__step figure {
+.main-process__step i {
   width: 30px;
   margin-left: 30px;
+  color: #9356DC;
   color: rgba(0, 0, 0, 0.3882352941);
 }
 .main-process__step__number {
@@ -252,14 +250,31 @@ img {
 }
 
 .card__info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   height: 30%;
   padding: 15px 20px;
 }
+.card__info i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+.card__info .fas {
+  color: transparent;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.card__info .fas:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
 footer {
-  padding: 30px 20px 40px;
+  padding: 30px 20px;
   color: white;
   background-color: #333;
 }
@@ -268,18 +283,19 @@ footer h2 {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
 }
-
-.footer-nav__item {
+footer .footer-nav {
   margin: 10px 0;
   list-style-type: none;
 }
-.footer-nav__item figure:nth-child(1),
-.footer-nav__item figure:nth-child(2) {
-  float: left;
-  width: 35px;
+footer .footer-nav:nth-child(1) i, footer .footer-nav:nth-child(2) i {
+  margin-right: 5px;
+  width: 30px;
 }
-.footer-nav__item a {
+footer .footer-nav a {
   color: white;
+}
+footer .footer-nav__item {
+  margin-bottom: 3px;
 }
 
 @media screen and (min-width: 768px) {
@@ -289,7 +305,7 @@ footer h2 {
   .main-process__step {
     justify-content: center;
   }
-  .main-process__step figure {
+  .main-process__step i {
     margin-left: 0;
     margin-right: 30px;
   }
@@ -311,7 +327,7 @@ footer h2 {
     justify-content: center;
   }
   .footer-nav__item {
-    margin: 0 20px;
+    margin: 0 40px;
   }
 }
 

@@ -118,7 +118,7 @@ img{
                 letter-spacing: 1px;
                 cursor: pointer;
                 color: white;
-                background-image: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+                background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
                 transition: all 0.3s ease-in-out;
                 &:hover{
                     @include button-hover;
@@ -155,13 +155,12 @@ img{
     // @include flex-center;
         &:hover{
             background-color: #9256dc22;
-                figure i{
-                    color: $color-primary;
-                }
-        }
-        figure{
+                
+            }
+        i{
             width: 30px;
             margin-left: 30px;
+            color: $color-primary;
             color: #00000063;
         }
         &__number{
@@ -233,20 +232,34 @@ img{
 }
 
 .card__info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
     height: 30%;
     padding: 15px 20px;
-        figure i:hover{
-            // a faire
+        i{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+        }    
+        .fas{
+            color: transparent;
+            background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;;
         }
+        .fas:hover{
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
 }
 
 // Footer
 
 footer{
-    padding: 30px 20px 40px;
+    padding: 30px 20px;
     color: white;
     background-color: #333;
         h2{
@@ -254,19 +267,21 @@ footer{
             font-family: $title-font;
             font-weight: 400;
         }
-}
-
-.footer-nav__item{
-    margin: 10px 0;
-    list-style-type: none;
-    figure:nth-child(1),
-    figure:nth-child(2){
-        float: left;
-        width: 35px;
-    }
-    a{
-        color: white;
-    }
+        .footer-nav{
+            margin: 10px 0;
+            list-style-type: none;
+            &:nth-child(1) i,
+            &:nth-child(2) i{
+                margin-right: 5px;
+                width: 30px;
+            }
+            a{
+                color: white;
+            }
+            &__item{
+                margin-bottom: 3px;
+            }
+        }
 }
 
 // Media queries
@@ -285,7 +300,7 @@ footer{
 
     .main-process__step{
         justify-content: center; 
-            figure{
+            i{
                 margin-left: 0; 
                 margin-right: 30px;
             }
@@ -315,7 +330,7 @@ footer{
         display: flex;
         justify-content: center;
             &__item{
-                margin: 0 20px;
+                margin: 0 40px;
             }
     }
 }
