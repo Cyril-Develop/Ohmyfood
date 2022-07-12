@@ -1,3 +1,9 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @keyframes visibility {
   to {
     opacity: 0;
@@ -25,12 +31,6 @@
     border-bottom-color: #99E2D0;
   }
 }
-*, ::before, ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
@@ -98,13 +98,38 @@ img {
   animation: rotate .5s linear infinite;
 }
 
-.header-logo {
+header {
   height: 80px;
   width: 100%;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  padding: 30px 20px;
+  color: white;
+  background-color: #333;
+}
+footer h2 {
+  margin-bottom: 20px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+}
+footer .footer-nav {
+  margin: 10px 0;
+  list-style-type: none;
+}
+footer .footer-nav:nth-child(1) i, footer .footer-nav:nth-child(2) i {
+  margin-right: 5px;
+  width: 30px;
+}
+footer .footer-nav__item {
+  margin-bottom: 3px;
+}
+footer .footer-nav a {
+  color: white;
 }
 
 .main-location {
@@ -139,10 +164,11 @@ img {
   cursor: pointer;
   color: white;
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
-  transition: all 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 }
 .main-description__btn:hover {
-  box-shadow: 5px 5px 8px black;
+  box-shadow: 5px 5px 5px black;
+  opacity: 0.9;
 }
 
 .main-process {
@@ -172,14 +198,16 @@ img {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
 }
-.main-process__step:hover {
-  background-color: rgba(146, 86, 220, 0.1333333333);
-}
 .main-process__step i {
   width: 30px;
   margin-left: 30px;
-  color: #9356DC;
   color: rgba(0, 0, 0, 0.3882352941);
+}
+.main-process__step:hover {
+  background-color: rgba(146, 86, 220, 0.1333333333);
+}
+.main-process__step:hover i {
+  color: #9356DC;
 }
 .main-process__step__number {
   display: flex;
@@ -211,9 +239,6 @@ img {
   width: 100%;
   max-width: 2000px;
 }
-.main-restaurant__card {
-  position: relative;
-}
 .main-restaurant__card:nth-child(1)::before, .main-restaurant__card:nth-child(2)::before {
   content: "Nouveau";
   position: absolute;
@@ -229,6 +254,7 @@ img {
 }
 
 .main-restaurant__card {
+  position: relative;
   width: 100%;
   max-width: 650px;
   height: 300px;
@@ -260,7 +286,7 @@ img {
   transform: translateY(-50%);
   right: 20px;
 }
-.card__info .fas {
+.card__info .heart-solid {
   color: transparent;
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   background-clip: text;
@@ -268,34 +294,9 @@ img {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.card__info .fas:hover {
+.card__info .heart-solid:hover {
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
-}
-
-footer {
-  padding: 30px 20px;
-  color: white;
-  background-color: #333;
-}
-footer h2 {
-  margin-bottom: 20px;
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-footer .footer-nav {
-  margin: 10px 0;
-  list-style-type: none;
-}
-footer .footer-nav:nth-child(1) i, footer .footer-nav:nth-child(2) i {
-  margin-right: 5px;
-  width: 30px;
-}
-footer .footer-nav a {
-  color: white;
-}
-footer .footer-nav__item {
-  margin-bottom: 3px;
 }
 
 @media screen and (min-width: 768px) {

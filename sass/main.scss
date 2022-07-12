@@ -1,91 +1,12 @@
+@import "./Base/reset";
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./Base/base";
+@import './Layout/loader';
+@import "./Layout/header";
+@import "./Layout/footer";
 
-*, ::before, ::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html{
-    font-size: 10px;
-    font-family: $text-font;
-}
-
-//******************** Utilities
-
-h1,h2{
-    font-size: clamp(2.5rem, 3vw, 3.5rem);
-    font-weight: 600;
-}
-
-h3{
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    font-weight: 900;
-}
-
-p, a, i, button{
-    font-weight: 500;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-}
-
-a{
-    text-decoration: none;
-}
-
-img{
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-}
-
-//******************** Loader
-
-.loader {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 100vh;
-    pointer-events:none;
-    background-color: #000000;
-    @include flex-center;
-    @include animation('visibility 1s ease forwards');
-        &__txt{
-            font-size: 30px;
-            letter-spacing: 1px;
-            color: #ffffff;
-            @include animation('txt 0.5s linear infinite');
-        }
-        &__ring{  
-            position: absolute;
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-                &::after{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    border-radius: 50%;
-                    border: 10px solid transparent;
-                    @include animation('rotate .5s linear infinite');
-                }
-        }
-}
-
-//******************** Header
-
-.header-logo{
-    height: 80px;
-    width: 100%;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
-    @include flex-center;
-}
-
-//******************** Main
 
 // Section main-location
 
@@ -119,7 +40,7 @@ img{
                 cursor: pointer;
                 color: white;
                 background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-                transition: all 0.3s ease-in-out;
+                transition: box-shadow 0.3s ease-in-out;
                 &:hover{
                     @include button-hover;
                 }
@@ -152,17 +73,17 @@ img{
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
-    // @include flex-center;
-        &:hover{
-            background-color: #9256dc22;
-                
-            }
         i{
             width: 30px;
             margin-left: 30px;
-            color: $color-primary;
             color: #00000063;
         }
+        &:hover{
+            background-color: #9256dc22;  
+                i{
+                    color: $color-primary;
+                }   
+            }
         &__number{
             @include flex-center;
             position: absolute;
@@ -193,9 +114,6 @@ img{
             width: 100%;
             max-width: 2000px;
         }
-        &__card{
-            position: relative;
-        }
         &__card:nth-child(1)::before,
         &__card:nth-child(2)::before{
             content: 'Nouveau';
@@ -213,6 +131,7 @@ img{
 }
 
 .main-restaurant__card{
+    position: relative;
     width: 100%;
     max-width: 650px;
     height: 300px;
@@ -235,13 +154,40 @@ img{
     position: relative;
     height: 30%;
     padding: 15px 20px;
+        // &::before{
+        //     content: '\f004';
+        //     position: absolute;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     right: 20px;
+        //     font-family: 'Font Awesome 5 Free';
+        // }
+        // &::after{
+        //     content: '\f004';
+        //     position: absolute;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     right: 20px;
+        //     font-weight: 900;
+        //     font-family: 'Font Awesome 5 Free';
+        //     color: transparent;
+        //     background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+        //     background-clip: text;
+        //     -webkit-background-clip: text;
+        //     opacity: 0;
+        //     transition: opacity 0.3s ease-in-out;;
+        //         &:hover{
+        //             opacity: 1;
+        //             transform: translateY(-50%) scale(1.2);
+        //         }
+        // }
         i{
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             right: 20px;
         }    
-        .fas{
+        .heart-solid{
             color: transparent;
             background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
             background-clip: text;
@@ -249,39 +195,11 @@ img{
             opacity: 0;
             transition: opacity 0.3s ease-in-out;;
         }
-        .fas:hover{
+        .heart-solid:hover{
             opacity: 1;
             transform: translateY(-50%) scale(1.1);
         }
         
-}
-
-// Footer
-
-footer{
-    padding: 30px 20px;
-    color: white;
-    background-color: #333;
-        h2{
-            margin-bottom: 20px;
-            font-family: $title-font;
-            font-weight: 400;
-        }
-        .footer-nav{
-            margin: 10px 0;
-            list-style-type: none;
-            &:nth-child(1) i,
-            &:nth-child(2) i{
-                margin-right: 5px;
-                width: 30px;
-            }
-            a{
-                color: white;
-            }
-            &__item{
-                margin-bottom: 3px;
-            }
-        }
 }
 
 // Media queries

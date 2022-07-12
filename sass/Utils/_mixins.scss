@@ -65,10 +65,12 @@
 //     transition: all 0.3s ease-in-out;
 // }
 
-@mixin gradient {
+@mixin gradient{
     background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
 }
 
 @mixin button-hover{
-    box-shadow: 5px 5px 8px black ;
+    box-shadow: 5px 5px 5px black;
+    opacity: 0.9;
 }
+

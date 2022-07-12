@@ -1,0 +1,25 @@
+footer{
+    padding: 30px 20px;
+    color: white;
+    background-color: #333;
+        h2{
+            margin-bottom: 20px;
+            font-family: $title-font;
+            font-weight: 400;
+        }
+        .footer-nav{
+            margin: 10px 0;
+            list-style-type: none;
+            &:nth-child(1) i,
+            &:nth-child(2) i{
+                margin-right: 5px;
+                width: 30px;
+            }
+            &__item{
+                margin-bottom: 3px;
+            }
+            a{
+                color: white;
+            }
+        }
+}
