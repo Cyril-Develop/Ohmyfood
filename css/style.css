@@ -42,7 +42,7 @@ h1, h2 {
 }
 
 h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 900;
 }
 
@@ -248,6 +248,7 @@ img {
 }
 .main-restaurant__card p {
   font-weight: 300;
+  margin-top: 5px;
 }
 
 .card__info {
