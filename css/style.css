@@ -36,6 +36,11 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
 h1, h2 {
   font-size: clamp(2.5rem, 3vw, 3.5rem);
   font-weight: 600;
@@ -44,6 +49,11 @@ h1, h2 {
 h3 {
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 900;
+}
+
+h4 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
 }
 
 p, a, i, button {
@@ -149,8 +159,32 @@ header .header__return::before {
   left: 5%;
 }
 
-.main_banner {
+.main__banner {
   max-height: 70vh;
+}
+
+.main__title {
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+  text-align: center;
+  padding: 30px 20px;
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+  background-color: white;
+}
+
+.main__menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 50px;
+  position: relative;
+  top: -40px;
+}
+.main__menu__starter, .main__menu__dish, .main__menu__dessert {
+  background-color: aqua;
+  width: 30%;
+  border: 1px solid black;
 }
 
 .main-location {

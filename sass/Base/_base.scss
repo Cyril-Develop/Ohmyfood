@@ -3,6 +3,11 @@ html{
     font-family: $text-font;
 }
 
+body{
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
 h1,h2{
     font-size: clamp(2.5rem, 3vw, 3.5rem);
     font-weight: 600;
@@ -11,6 +16,11 @@ h1,h2{
 h3{
     font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 900;
+}
+
+h4{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
 }
 
 p, a, i, button{
