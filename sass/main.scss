@@ -11,7 +11,7 @@
 
 .main-location{
     height: 70px;
-    background-color: #0000001a;
+    background-color: #EAEAEA;
     @include flex-center;
         &__logo{
             margin-right: 20px;
@@ -24,7 +24,7 @@
     flex-direction: column;
     padding: 50px 20px 60px;
     text-align: center;
-    background-color: #0000000e;
+    background-color: #F6F6F6;
     @include flex-center;
         &__text{
             margin: 15px 0 35px;
@@ -52,7 +52,7 @@
 .main-process{
     @include flex-center;
     flex-direction: column;
-    padding: 50px 20px 40px;
+    padding: 40px 20px;
         h2{
             align-self: flex-start;
             margin-bottom: 25px;
@@ -71,6 +71,7 @@
     padding: 15px 15px 15px 0;
     border-radius: 20px;
     cursor: pointer;
+    background-color: #F6F6F6;
     transition: all 0.3s ease-in-out;
     @include base-shadow;
         i{
@@ -101,7 +102,7 @@
 
 .main-restaurant{
     padding: 50px 20px 40px;
-    background-color: #0000000e;
+    background-color: #F6F6F6;
         h2{
             margin-bottom: 10px;
         }
@@ -208,6 +209,15 @@
 // Media queries
 
 @media screen and (min-width: 768px) {
+
+    // header
+
+    header{
+        height: 80px;
+            img{
+                width: auto;
+            }
+    }
 
     // Section description
 
