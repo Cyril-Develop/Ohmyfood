@@ -106,6 +106,10 @@ header {
   justify-content: center;
   align-items: center;
 }
+header img {
+  width: auto;
+  height: auto;
+}
 
 footer {
   padding: 30px 20px;
@@ -130,6 +134,23 @@ footer .footer-nav__item {
 }
 footer .footer-nav a {
   color: white;
+}
+
+header {
+  position: relative;
+}
+header .header__return::before {
+  content: "\f060";
+  font-family: "FontAwesome";
+  color: black;
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  left: 5%;
+}
+
+.main_banner {
+  max-height: 70vh;
 }
 
 .main-location {
@@ -165,6 +186,7 @@ footer .footer-nav a {
   color: white;
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
 .main-description__btn:hover {
   box-shadow: 5px 5px 5px black;
@@ -196,7 +218,7 @@ footer .footer-nav a {
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
 .main-process__step i {
   width: 30px;
@@ -262,7 +284,7 @@ footer .footer-nav a {
   overflow: hidden;
   margin: 20px 0;
   color: black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
 .main-restaurant__card figure {
   height: 70%;

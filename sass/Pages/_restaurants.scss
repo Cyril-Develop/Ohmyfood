@@ -1,0 +1,24 @@
+// Header
+
+header{
+    position: relative;
+        .header__return::before{
+            content: '\f060';
+            font-family: 'FontAwesome';
+            color: black;
+            position: absolute;
+            left: 0;
+            transform: translateY(-50%);
+            left: 5%;
+        }
+}
+
+
+.main_banner{
+    max-height: 70vh;
+}
+
+.main-menu div{
+
+}
+

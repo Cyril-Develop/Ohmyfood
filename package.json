@@ -1,11 +1,11 @@
 {
-  "name": "ohmyfoodfinal",
+  "name": "ohmyfood",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projet 3 OpenClassRooms",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch sass/main.scss css/style.css"
   },
-  "author": "",
+  "author": "Cyril Bourdon",
   "license": "ISC"
 }
