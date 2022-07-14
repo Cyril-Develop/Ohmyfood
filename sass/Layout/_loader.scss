@@ -6,12 +6,12 @@
     pointer-events:none;
     background-color: #000000;
     @include flex-center;
-    @include animation('visibility 1s ease forwards');
+    animation: visibility 1s ease forwards;
         &__txt{
             font-size: 30px;
             letter-spacing: 1px;
             color: #ffffff;
-            @include animation('txt 0.5s linear infinite');
+            animation: text 0.5s linear infinite;
         }
         &__ring{  
             position: absolute;
@@ -27,7 +27,7 @@
                     right: 0;
                     border-radius: 50%;
                     border: 10px solid transparent;
-                    @include animation('rotate .5s linear infinite');
+                    animation: rotate .5s linear infinite;
                 }
         }
 }

@@ -15,18 +15,10 @@ header{
 
 .main__banner{
     max-height: 70vh;
-    
+    min-height: 30vh;
 }
 
-.main__title{
-    font-family: "Shrikhand", cursive;
-    font-weight: 500;
-    text-align: center;
-    padding: 30px 20px;
-    width: 100%;
-    border-radius: 30px 30px 0 0;
-    background-color: white;
-}
+
 
 .main__menu{
     display: flex;
@@ -36,15 +28,26 @@ header{
     gap: 0 40px;
     position: relative;
     top: -50px;
+    &__title{
+        font-family: "Shrikhand", cursive;
+        font-weight: 500;
+        // font-size: clamp(2.5rem, 3vw, 3.5rem);
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        border-radius: 30px 30px 0 0;
+        background-color: white;
+    }
     h3{
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         padding-left: 10px;
+        font-weight: 300;
         text-transform: uppercase;
         &::before{
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -10px;
             width: 10%;
             height: 4px;
             background-color: #99E2D0;
@@ -53,30 +56,71 @@ header{
     &__starter, 
     &__dish, 
     &__dessert{
-        // width: 30%;
-        // padding: 0 20px;
-        width: 100%;//
-        margin-bottom: 30px;//
+        padding: 10px 20px 30px;
+        width: 100%;
     }
 }
 
 .meal{
+    display: flex;
     @include base-shadow;
     border-radius: 10px;
-    padding: 10px;
     margin-top: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    &__description{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        padding: 10px;
         h4{
-            font-weight: 600;
+            overflow: hidden;
+            text-overflow:ellipsis;
         }
         p{
-            display: flex;
-            justify-content: space-between;   
-            font-weight: 400;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            overflow: hidden;
+            text-overflow:ellipsis;
+            font-weight: 200;
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
     }
+    &__price{
+        font-weight: 500;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-left: auto;
+        flex-shrink: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px;
+    }
+    &__check{
+        @include flex-center;
+        // margin-right: -70px;
+        // width: 70px;
+        margin-right: -67px;
+        padding:0 15px;
+        background-color: $color-tertiary;
+        transition: margin-right 0.4s ease-in-out;
+            i{
+                padding: 10px;
+                border-radius: 50%;
+                color: $color-tertiary;
+                font-size: 20px;
+                background-color: #fff;
+                transition: transform 0.4s ease-in-out;
+            }
+    }
+    &:hover &__check{
+        margin-right: 0;
+    }
+    &:hover &__check i{
+        transform: rotate(360deg);
+    }
+
+}
+
     
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
     .main__menu{
         display: flex;
         flex-direction: row;//
@@ -94,7 +138,6 @@ header{
             &::before{
                 content: '';
                 position: absolute;
-                // bottom: -8px;
                 width: 50px;
                 height: 4px;
                 background-color: #99E2D0;
@@ -104,7 +147,7 @@ header{
         &__dish, 
         &__dessert{
             width: 30%;
-            padding: 0 20px;
+            padding: 0;
         }
     }
 }

@@ -6,6 +6,7 @@
 @import "./Layout/header";
 @import "./Layout/footer";
 @import "./Pages/restaurants";
+@import "./utils/animations";
 
 // Section main-location
 
@@ -31,16 +32,16 @@
             font-weight: 300;
         }
         &__btn{
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            color: white;
+            background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+            transition: box-shadow 0.3s ease-in-out;
+            @include base-shadow;
             // @include button-style;
-                padding: 15px;
-                border: none;
-                border-radius: 30px;
-                letter-spacing: 1px;
-                cursor: pointer;
-                color: white;
-                background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-                transition: box-shadow 0.3s ease-in-out;
-                @include base-shadow;
                 &:hover{
                     @include button-hover;
                 }
@@ -127,7 +128,7 @@
             border-radius: 5px;
             padding: 10px 15px;
             color: #1b6150;
-            background-color: #99e2d0;
+            background-color: $color-tertiary;
         }
 }
 
