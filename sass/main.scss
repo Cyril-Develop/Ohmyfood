@@ -32,16 +32,16 @@
             font-weight: 300;
         }
         &__btn{
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            color: white;
-            background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-            transition: box-shadow 0.3s ease-in-out;
+            // padding: 15px;
+            // border: none;
+            // border-radius: 30px;
+            // letter-spacing: 1px;
+            // cursor: pointer;
+            // color: white;
+            // background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+            // transition: box-shadow 0.3s ease-in-out;
             @include base-shadow;
-            // @include button-style;
+            @include button-style;
                 &:hover{
                     @include button-hover;
                 }
