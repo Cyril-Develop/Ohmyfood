@@ -11,13 +11,11 @@
     padding: 20px;
     border: none;
     border-radius: 30px;
-    font-weight: 900;
     letter-spacing: 1px;
     cursor: pointer;
     color: white;
-    font-family: $text-font;
-    font-weight: 600;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
     background-image: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
     transition: all 0.3s ease-in-out;
 }

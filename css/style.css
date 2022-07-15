@@ -27,7 +27,7 @@ h4 {
 
 p, a, i, button {
   font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 a {
@@ -132,7 +132,6 @@ header .header__return::before {
   max-height: 70vh;
   min-height: 30vh;
 }
-
 .main__menu {
   display: flex;
   flex-direction: column;
@@ -152,8 +151,27 @@ header .header__return::before {
   background-color: white;
 }
 .main__menu__starter, .main__menu__dish, .main__menu__dessert {
-  padding: 10px 20px 30px;
+  padding: 10px 20px 40px;
   width: 100%;
+}
+.main__menu__btn {
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: white;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
+  padding: 15px 40px;
+  margin: 0 auto;
+}
+.main__menu__btn:hover {
+  box-shadow: 5px 5px 5px black;
+  opacity: 0.9;
 }
 .main__menu h3 {
   position: relative;
@@ -230,31 +248,11 @@ header .header__return::before {
 
 @media screen and (min-width: 1000px) {
   .main__menu {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 40px;
-    position: relative;
-    top: -50px;
   }
   .main__menu__starter, .main__menu__dish, .main__menu__dessert {
     width: 30%;
-    padding: 0;
-  }
-  .main__menu h3 {
-    position: relative;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-  .main__menu h3::before {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 4px;
-    background-color: #99E2D0;
+    padding-bottom: 40px;
   }
 }
 @keyframes rotate {
@@ -313,13 +311,11 @@ header .header__return::before {
   padding: 20px;
   border: none;
   border-radius: 30px;
-  font-weight: 900;
   letter-spacing: 1px;
   cursor: pointer;
   color: white;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   transition: all 0.3s ease-in-out;
 }
