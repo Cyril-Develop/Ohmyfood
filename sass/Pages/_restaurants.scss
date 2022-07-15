@@ -26,15 +26,22 @@ header{
         gap: 0 40px;
         position: relative;
         top: -50px;
-            &__title{
-                font-family: "Shrikhand", cursive;
-                font-weight: 500;
-                text-align: center;
-                padding: 20px;
-                width: 100%;
-                border-radius: 30px 30px 0 0;
-                background-color: white;
-            }
+        &__title{
+            position: relative;
+            font-family: "Shrikhand", cursive;
+            font-weight: 500;
+            // text-align: center;
+            padding: 20px;
+            width: 100%;
+            border-radius: 30px 30px 0 0;
+            background-color: white;
+        }
+        .heart{
+            @include heart;
+        }    
+        .heart-solid{
+            @include heart-solid;
+        }
             &__starter, 
             &__dish, 
             &__dessert{
@@ -139,8 +146,16 @@ header{
             &__dessert{
                 width: 30%;//
                 padding-bottom: 40px;//
-        }
+            }
+            &__title{
+                text-align: center;
+            }
     }
+
+    .main__menu .heart{
+        @include heart;
+        right: 30%;
+    }    
 }
 
 

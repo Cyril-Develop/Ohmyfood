@@ -141,7 +141,6 @@
     overflow: hidden;
     margin: 20px 0;
     color: black;
-    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.231);
     @include base-shadow;
         figure{
             height: 70%;
@@ -157,54 +156,12 @@
     position: relative;
     height: 30%;
     padding: 15px 20px;
-        // &::before{
-        //     content: '\f004';
-        //     position: absolute;
-        //     top: 50%;
-        //     transform: translateY(-50%);
-        //     right: 20px;
-        //     font-size: 3rem;
-        //     font-weight: 400;
-        //     color: black;
-        //     opacity: 1;
-        //     font-family: 'Font Awesome 5 Free';
-        //     transition: opacity 0.3s ease-in-out;
-        // }
-        // &::after{
-        //     content: '\f004';
-        //     position: absolute;
-        //     top: 50%;
-        //     transform: translateY(-50%);
-        //     right: 20px;
-        //     font-size: 3rem;
-        //     font-weight: 900;
-        //     background-clip: text;
-        //     -webkit-background-clip: text;
-        //     color: transparent;
-        //     opacity: 1;
-        //     font-family: 'Font Awesome 5 Free';
-        //     background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-        //     transition: all 0.3s ease-in-out;
-        // }
-        i{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 20px;
+        .heart{
+            @include heart;
         }    
         .heart-solid{
-            color: transparent;
-            background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;;
+            @include heart-solid;
         }
-        .heart-solid:hover{
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1);
-        }
-        
 }
 
 // Media queries

@@ -142,13 +142,32 @@ header .header__return::before {
   top: -50px;
 }
 .main__menu__title {
+  position: relative;
   font-family: "Shrikhand", cursive;
   font-weight: 500;
-  text-align: center;
   padding: 20px;
   width: 100%;
   border-radius: 30px 30px 0 0;
   background-color: white;
+}
+.main__menu .heart {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+.main__menu .heart-solid {
+  color: transparent;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  cursor: pointer;
+}
+.main__menu .heart-solid:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 .main__menu__starter, .main__menu__dish, .main__menu__dessert {
   padding: 10px 20px 40px;
@@ -253,6 +272,16 @@ header .header__return::before {
   .main__menu__starter, .main__menu__dish, .main__menu__dessert {
     width: 30%;
     padding-bottom: 40px;
+  }
+  .main__menu__title {
+    text-align: center;
+  }
+  .main__menu .heart {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    right: 30%;
   }
 }
 @keyframes rotate {
@@ -434,7 +463,7 @@ header .header__return::before {
   height: 30%;
   padding: 15px 20px;
 }
-.card__info i {
+.card__info .heart {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -446,7 +475,8 @@ header .header__return::before {
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
+  cursor: pointer;
 }
 .card__info .heart-solid:hover {
   opacity: 1;

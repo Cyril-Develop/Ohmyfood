@@ -20,16 +20,38 @@
     transition: all 0.3s ease-in-out;
 }
 
-
-@mixin gradient{
-    background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-}
-
 @mixin button-hover{
     box-shadow: 5px 5px 5px black;
     opacity: 0.9;
 }
 
+@mixin gradient{
+    background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+}
+
 @mixin base-shadow{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
+}
+
+// Heart
+
+@mixin heart{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+@mixin heart-solid{
+    color: transparent;
+    background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+    }
 }
