@@ -27,7 +27,7 @@ h4 {
 
 p, a, i, button {
   font-weight: 500;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
 a {
@@ -85,9 +85,19 @@ header {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  header {
+    height: 80px;
+  }
+}
 header img {
   width: 160px;
   height: auto;
+}
+@media screen and (min-width: 768px) {
+  header img {
+    width: auto;
+  }
 }
 
 footer {
@@ -100,9 +110,20 @@ footer h2 {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  footer h2 {
+    text-align: center;
+  }
+}
 footer .footer-nav {
   margin: 10px 0;
   list-style-type: none;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-nav {
+    display: flex;
+    justify-content: center;
+  }
 }
 footer .footer-nav:nth-child(1) i, footer .footer-nav:nth-child(2) i {
   margin-right: 5px;
@@ -110,6 +131,11 @@ footer .footer-nav:nth-child(1) i, footer .footer-nav:nth-child(2) i {
 }
 footer .footer-nav__item {
   margin-bottom: 3px;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-nav__item {
+    margin: 0 40px;
+  }
 }
 footer .footer-nav a {
   color: white;
@@ -141,8 +167,15 @@ header .header__return::before {
   position: relative;
   top: -50px;
 }
+@media screen and (min-width: 1300px) {
+  .main__menu {
+    flex-direction: row;
+  }
+}
 .main__menu__title {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Shrikhand", cursive;
   font-weight: 500;
   padding: 20px;
@@ -150,28 +183,70 @@ header .header__return::before {
   border-radius: 30px 30px 0 0;
   background-color: white;
 }
+@media screen and (min-width: 1300px) {
+  .main__menu__title {
+    justify-content: center;
+  }
+}
 .main__menu .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+@media screen and (min-width: 1300px) {
+  .main__menu .heart {
+    margin-left: 20px;
+  }
+}
+.main__menu .heart::before {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
+  transition: all 0.8s ease-in-out;
 }
-.main__menu .heart-solid {
-  color: transparent;
+.main__menu .heart::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  transition: all 0.8s ease-in-out;
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  cursor: pointer;
 }
-.main__menu .heart-solid:hover {
+.main__menu .heart:hover::before {
+  color: transparent;
+}
+.main__menu .heart:hover::after {
+  font-weight: 900;
   opacity: 1;
-  transform: translateY(-50%) scale(1.1);
 }
 .main__menu__starter, .main__menu__dish, .main__menu__dessert {
   padding: 10px 20px 40px;
   width: 100%;
+}
+@media screen and (min-width: 1300px) {
+  .main__menu__starter, .main__menu__dish, .main__menu__dessert {
+    width: 30%;
+    padding-bottom: 40px;
+  }
+}
+.main__menu__starter h3, .main__menu__dish h3, .main__menu__dessert h3 {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.main__menu__starter h3::before, .main__menu__dish h3::before, .main__menu__dessert h3::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  background-color: #99E2D0;
 }
 .main__menu__btn {
   padding: 20px;
@@ -191,21 +266,6 @@ header .header__return::before {
 .main__menu__btn:hover {
   box-shadow: 5px 5px 5px black;
   opacity: 0.9;
-}
-.main__menu h3 {
-  position: relative;
-  margin-bottom: 30px;
-  padding-left: 10px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-.main__menu h3::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 10%;
-  height: 4px;
-  background-color: #99E2D0;
 }
 
 .meal {
@@ -265,25 +325,6 @@ header .header__return::before {
   transform: rotate(360deg);
 }
 
-@media screen and (min-width: 1000px) {
-  .main__menu {
-    flex-direction: row;
-  }
-  .main__menu__starter, .main__menu__dish, .main__menu__dessert {
-    width: 30%;
-    padding-bottom: 40px;
-  }
-  .main__menu__title {
-    text-align: center;
-  }
-  .main__menu .heart {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    right: 30%;
-  }
-}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -348,6 +389,11 @@ header .header__return::before {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 768px) {
+  .main-description__btn {
+    padding: 20px;
+  }
+}
 .main-description__btn:hover {
   box-shadow: 5px 5px 5px black;
   opacity: 0.9;
@@ -363,6 +409,11 @@ header .header__return::before {
 .main-process h2 {
   align-self: flex-start;
   margin-bottom: 25px;
+}
+@media screen and (min-width: 768px) {
+  .main-process h2 {
+    align-self: center;
+  }
 }
 
 .main-process__step {
@@ -381,10 +432,21 @@ header .header__return::before {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
+@media screen and (min-width: 768px) {
+  .main-process__step {
+    justify-content: center;
+  }
+}
 .main-process__step i {
   width: 30px;
   margin-left: 30px;
   color: rgba(0, 0, 0, 0.3882352941);
+}
+@media screen and (min-width: 768px) {
+  .main-process__step i {
+    margin-left: 0;
+    margin-right: 30px;
+  }
 }
 .main-process__step:hover {
   background-color: rgba(146, 86, 220, 0.1333333333);
@@ -405,6 +467,12 @@ header .header__return::before {
   color: white;
   background-color: #9356DC;
 }
+@media screen and (min-width: 768px) {
+  .main-process__step__number {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 .main-restaurant {
   padding: 50px 20px 40px;
@@ -412,6 +480,11 @@ header .header__return::before {
 }
 .main-restaurant h2 {
   margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .main-restaurant h2 {
+    text-align: center;
+  }
 }
 .main-restaurant__cards {
   display: flex;
@@ -455,71 +528,46 @@ header .header__return::before {
 }
 .main-restaurant__card p {
   font-weight: 300;
-  margin-top: 5px;
 }
 
 .card__info {
-  position: relative;
   height: 30%;
   padding: 15px 20px;
 }
+.card__info p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .card__info .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.card__info .heart::before {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
+  transition: all 0.8s ease-in-out;
 }
-.card__info .heart-solid {
-  color: transparent;
+.card__info .heart::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  transition: all 0.8s ease-in-out;
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  cursor: pointer;
 }
-.card__info .heart-solid:hover {
+.card__info .heart:hover::before {
+  color: transparent;
+}
+.card__info .heart:hover::after {
+  font-weight: 900;
   opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
-
-@media screen and (min-width: 768px) {
-  header {
-    height: 80px;
-  }
-  header img {
-    width: auto;
-  }
-  .main-description__btn {
-    padding: 20px;
-  }
-  .main-process__step {
-    justify-content: center;
-  }
-  .main-process__step i {
-    margin-left: 0;
-    margin-right: 30px;
-  }
-  .main-process__step__number {
-    width: 30px;
-    height: 30px;
-  }
-  .main-process h2 {
-    align-self: center;
-  }
-  .main-restaurant h2 {
-    text-align: center;
-  }
-  footer h2 {
-    text-align: center;
-  }
-  .footer-nav {
-    display: flex;
-    justify-content: center;
-  }
-  .footer-nav__item {
-    margin: 0 40px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

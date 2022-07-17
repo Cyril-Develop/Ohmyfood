@@ -3,8 +3,14 @@ header{
     width: 100%;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.591);
     @include flex-center;
+    @media screen and (min-width: 768px){
+        height: 80px;
+    }
         img{
             width: 160px;
             height: auto;
+            @media screen and (min-width: 768px){
+                width: auto;
+            }
         }
 }

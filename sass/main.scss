@@ -32,16 +32,11 @@
             font-weight: 300;
         }
         &__btn{
-            // padding: 15px;
-            // border: none;
-            // border-radius: 30px;
-            // letter-spacing: 1px;
-            // cursor: pointer;
-            // color: white;
-            // background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-            // transition: box-shadow 0.3s ease-in-out;
             @include base-shadow;
             @include button-style;
+            @media screen and (min-width:768px) {
+                padding: 20px;
+            }
                 &:hover{
                     @include button-hover;
                 }
@@ -57,6 +52,9 @@
         h2{
             align-self: flex-start;
             margin-bottom: 25px;
+            @media screen and (min-width: 768px) {
+                align-self: center;
+            }
         }
 }
 
@@ -75,10 +73,17 @@
     background-color: #F6F6F6;
     transition: all 0.3s ease-in-out;
     @include base-shadow;
+    @media screen and (min-width: 768px) {
+        justify-content: center; 
+    }
         i{
             width: 30px;
             margin-left: 30px;
             color: #00000063;
+            @media screen and (min-width: 768px) {
+                margin-left: 0; 
+                margin-right: 30px;
+            }
         }
         &:hover{
             background-color: #9256dc22;  
@@ -96,6 +101,10 @@
             font-size: clamp(1.5rem, 2vw, 2rem);
             color: white;
             background-color: $color-primary;
+            @media screen and (min-width: 768px) {
+                width: 30px;
+                height: 30px;
+            }
         }     
 }
 
@@ -106,6 +115,9 @@
     background-color: #F6F6F6;
         h2{
             margin-bottom: 10px;
+            @media screen and (min-width: 768px) {
+                text-align: center;
+            }
         }
         &__cards{
             display: flex;
@@ -148,78 +160,35 @@
         }
         p{
             font-weight: 300;
-            margin-top: 5px;
         }
 }
+
 
 .card__info{
-    position: relative;
     height: 30%;
     padding: 15px 20px;
-        .heart{
-            @include heart;
-        }    
-        .heart-solid{
-            @include heart-solid;
-        }
-}
-
-// Media queries
-
-@media screen and (min-width: 768px) {
-
-    // header
-
-    header{
-        height: 80px;
-            img{
-                width: auto;
-            }
-    }
-
-    // Section description
-
-    .main-description{
-        &__btn{
-            padding: 20px;
-        }
-    }
-
-    // Section main-process
-
-    .main-process__step{
-        justify-content: center; 
-            i{
-                margin-left: 0; 
-                margin-right: 30px;
-            }
-            &__number{
-                width: 30px;
-                height: 30px;
-            }     
-    }
-
-    .main-process h2{
-        align-self:center;
-    }
-
-    // Section main-restaurants
-    
-    .main-restaurant h2{
-        text-align: center;
-    }
-
-    // Footer
-
-    footer h2{
-        text-align: center;
-    }
-
-    .footer-nav{
+    p{
         display: flex;
-        justify-content: center;
-            &__item{
-                margin: 0 40px;
+        align-items: center;
+        justify-content: space-between
+    }
+    .heart{
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        &::before{
+            @include heart;
+        }
+        &::after{
+            @include heart;
+            @include heart-solid;
             }
+        &:hover::before{
+            color:transparent;
+        }
+        &:hover::after{
+            font-weight: 900;
+            opacity: 1;
+        }
     }
 }

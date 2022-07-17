@@ -6,7 +6,6 @@
     align-items: center;
 }
 
-
 @mixin button-style{
     padding: 20px;
     border: none;
@@ -36,22 +35,16 @@
 // Heart
 
 @mixin heart{
+    content: '\f004';
+    font-family: "Font Awesome 5 Free";
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
+    transition: all 0.8s ease-in-out;
 }
 
 @mixin heart-solid{
-    color: transparent;
-    background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-    background-clip: text;
+    background: linear-gradient(to bottom, $color-secondary, $color-primary 80%); 
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    cursor: pointer;
-    &:hover{
-        opacity: 1;
-        transform: translateY(-50%) scale(1.1);
-    }
 }
+
