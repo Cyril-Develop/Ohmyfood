@@ -30,6 +30,10 @@ footer{
             }
             a{
                 color: white;
+                transition: color 0.4s ease-in-out;
+                &:hover{
+                    color: $light-primary-color;
+                    }
             }
         }
 }

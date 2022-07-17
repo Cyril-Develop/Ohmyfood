@@ -15,21 +15,32 @@
     color: white;
     font-weight: 400;
     font-size: clamp(1.4rem, 3vw, 2.5rem);
-    background-image: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-    transition: all 0.3s ease-in-out;
+    background: $gradient;
+    transition: all 0.4s ease-in-out;
 }
 
 @mixin button-hover{
     box-shadow: 5px 5px 5px black;
-    opacity: 0.9;
-}
-
-@mixin gradient{
-    background : linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+    background: $light-gradient;
 }
 
 @mixin base-shadow{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
+}
+
+// logo process
+
+@mixin logo-process{
+    font-family: 'FontAwesome';
+    margin-left: 30px;
+    width: 30px;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #00000063;
+    transition: all 0.4s ease-in-out;
+    @media screen and (min-width: 768px) {
+        margin-left: 0; 
+        margin-right: 30px;
+    }
 }
 
 // Heart
@@ -42,9 +53,10 @@
 }
 
 @mixin heart-solid{
-    background: linear-gradient(to bottom, $color-secondary, $color-primary 80%); 
+    background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     opacity: 0;
+    cursor: pointer;
 }
 

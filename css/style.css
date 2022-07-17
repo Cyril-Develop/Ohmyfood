@@ -41,6 +41,60 @@ img {
   height: 100%;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: #9356DC;
+    border-bottom-color: #9356DC;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: #FF79DA;
+    border-bottom-color: #FF79DA;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: #99E2D0;
+    border-bottom-color: #99E2D0;
+  }
+}
+@keyframes visibility {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes text {
+  30% {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.new {
+  position: relative;
+}
+.new::before {
+  content: "Nouveau";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: #10392f;
+  background-color: #99E2D0;
+}
+
 .loader {
   position: fixed;
   z-index: 10;
@@ -139,6 +193,10 @@ footer .footer-nav__item {
 }
 footer .footer-nav a {
   color: white;
+  transition: color 0.4s ease-in-out;
+}
+footer .footer-nav a:hover {
+  color: #a16be0;
 }
 
 header {
@@ -215,6 +273,7 @@ header .header__return::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  cursor: pointer;
 }
 .main__menu .heart:hover::before {
   color: transparent;
@@ -257,15 +316,15 @@ header .header__return::before {
   color: white;
   font-weight: 400;
   font-size: clamp(1.4rem, 3vw, 2.5rem);
-  background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
-  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  transition: all 0.4s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
   padding: 15px 40px;
   margin: 0 auto;
 }
 .main__menu__btn:hover {
   box-shadow: 5px 5px 5px black;
-  opacity: 0.9;
+  background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
 }
 
 .meal {
@@ -275,6 +334,19 @@ header .header__return::before {
   margin-top: 20px;
   cursor: pointer;
   overflow: hidden;
+  animation: appear 1s both;
+}
+.meal:nth-child(1) {
+  animation-delay: 100ms;
+}
+.meal:nth-child(2) {
+  animation-delay: 200ms;
+}
+.meal:nth-child(3) {
+  animation-delay: 300ms;
+}
+.meal:nth-child(4) {
+  animation-delay: 400ms;
 }
 .meal__description {
   white-space: nowrap;
@@ -325,33 +397,6 @@ header .header__return::before {
   transform: rotate(360deg);
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-    border-top-color: #9356DC;
-    border-bottom-color: #9356DC;
-  }
-  50% {
-    transform: rotate(180deg);
-    border-top-color: #FF79DA;
-    border-bottom-color: #FF79DA;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-top-color: #99E2D0;
-    border-bottom-color: #99E2D0;
-  }
-}
-@keyframes visibility {
-  to {
-    opacity: 0;
-  }
-}
-@keyframes text {
-  30% {
-    opacity: 0;
-  }
-}
 .main-location {
   height: 70px;
   background-color: #EAEAEA;
@@ -359,8 +404,10 @@ header .header__return::before {
   justify-content: center;
   align-items: center;
 }
-.main-location__logo {
-  margin-right: 20px;
+.main-location p::before {
+  content: "\f3c5";
+  font-family: "FontAwesome";
+  margin-right: 2rem;
 }
 
 .main-description {
@@ -386,8 +433,8 @@ header .header__return::before {
   color: white;
   font-weight: 400;
   font-size: clamp(1.4rem, 3vw, 2.5rem);
-  background-image: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
-  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
+  transition: all 0.4s ease-in-out;
 }
 @media screen and (min-width: 768px) {
   .main-description__btn {
@@ -396,7 +443,7 @@ header .header__return::before {
 }
 .main-description__btn:hover {
   box-shadow: 5px 5px 5px black;
-  opacity: 0.9;
+  background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
 }
 
 .main-process {
@@ -429,7 +476,7 @@ header .header__return::before {
   border-radius: 20px;
   cursor: pointer;
   background-color: #F6F6F6;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
 @media screen and (min-width: 768px) {
@@ -437,21 +484,55 @@ header .header__return::before {
     justify-content: center;
   }
 }
-.main-process__step i {
-  width: 30px;
+.main-process__step:nth-child(2)::after {
+  content: "\f3cf";
+  font-family: "FontAwesome";
   margin-left: 30px;
+  width: 30px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   color: rgba(0, 0, 0, 0.3882352941);
+  transition: all 0.4s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .main-process__step i {
+  .main-process__step:nth-child(2)::after {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+.main-process__step:nth-child(3)::after {
+  content: "\f03a";
+  font-family: "FontAwesome";
+  margin-left: 30px;
+  width: 30px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: rgba(0, 0, 0, 0.3882352941);
+  transition: all 0.4s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .main-process__step:nth-child(3)::after {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+.main-process__step:nth-child(4)::after {
+  content: "\f54e";
+  font-family: "FontAwesome";
+  margin-left: 30px;
+  width: 30px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: rgba(0, 0, 0, 0.3882352941);
+  transition: all 0.4s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .main-process__step:nth-child(4)::after {
     margin-left: 0;
     margin-right: 30px;
   }
 }
 .main-process__step:hover {
-  background-color: rgba(146, 86, 220, 0.1333333333);
+  background-color: #f2eafb;
 }
-.main-process__step:hover i {
+.main-process__step:hover:hover::after {
   color: #9356DC;
 }
 .main-process__step__number {
@@ -486,31 +567,7 @@ header .header__return::before {
     text-align: center;
   }
 }
-.main-restaurant__cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0 50px;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 2000px;
-}
-.main-restaurant__card:nth-child(1)::before, .main-restaurant__card:nth-child(2)::before {
-  content: "Nouveau";
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 20px;
-  right: 20px;
-  border-radius: 5px;
-  padding: 10px 15px;
-  color: #1b6150;
-  background-color: #99E2D0;
-}
-
-.main-restaurant__card {
-  position: relative;
+.main-restaurant a {
   width: 100%;
   max-width: 650px;
   height: 300px;
@@ -520,14 +577,23 @@ header .header__return::before {
   color: black;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
 }
-.main-restaurant__card figure {
+.main-restaurant a figure {
   height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-restaurant__card p {
+.main-restaurant a p {
   font-weight: 300;
+}
+.main-restaurant__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 2000px;
 }
 
 .card__info {
@@ -539,20 +605,20 @@ header .header__return::before {
   align-items: center;
   justify-content: space-between;
 }
-.card__info .heart {
+.card__info__heart {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
 }
-.card__info .heart::before {
+.card__info__heart::before {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
   transition: all 0.8s ease-in-out;
 }
-.card__info .heart::after {
+.card__info__heart::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
@@ -561,11 +627,12 @@ header .header__return::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  cursor: pointer;
 }
-.card__info .heart:hover::before {
+.card__info__heart:hover::before {
   color: transparent;
 }
-.card__info .heart:hover::after {
+.card__info__heart:hover::after {
   font-weight: 900;
   opacity: 1;
 }
