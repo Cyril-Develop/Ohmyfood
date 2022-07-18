@@ -20,18 +20,19 @@ footer{
                 margin-bottom: rem-calc(3);
                 @media screen and (min-width: 1300px) {
                     margin: 0 rem-calc(40);
+                    display: flex;
                 }
                     &:nth-child(1)::before{
                         content: '\f2e7';
                         font-family: 'FontAwesome';
                         margin-right: rem-calc(10);
-                        font-size: clamp(1.5rem, 2vw, 2rem);
+                        font-size: clamp(1.3rem, 2vw, 1.7rem);
                     }
                     &:nth-child(2)::before{
                         content: '\f4c4';
                         font-family: 'FontAwesome';
                         margin-right: rem-calc(10);
-                        font-size: clamp(1.5rem, 2vw, 2rem);
+                        font-size: clamp(1.3rem, 2vw, 1.7rem);
                     }
                     a{
                         transition: color 0.4s ease-in-out;
