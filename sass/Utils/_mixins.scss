@@ -7,14 +7,14 @@
 }
 
 @mixin button-style{
-    padding: 20px;
+    padding: rem-calc(20);
     border: none;
-    border-radius: 30px;
+    border-radius: rem-calc(30);
     letter-spacing: 1px;
     cursor: pointer;
     color: white;
     font-weight: 400;
-    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
     background: $gradient;
     transition: all 0.4s ease-in-out;
 }
@@ -32,14 +32,15 @@
 
 @mixin logo-process{
     font-family: 'FontAwesome';
-    margin-left: 30px;
-    width: 30px;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-left: rem-calc(30);
+    margin-right: rem-calc(10);
+    width: rem-calc(30);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
     color: #00000063;
     transition: all 0.4s ease-in-out;
     @media screen and (min-width: 768px) {
         margin-left: 0; 
-        margin-right: 30px;
+        margin-right: rem-calc(30);
     }
 }
 

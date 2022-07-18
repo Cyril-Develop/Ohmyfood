@@ -1,38 +1,43 @@
 footer{
-    padding: 30px 20px;
+    padding: rem-calc(30) rem-calc(20);
     color: white;
     background-color: #333;
         h2{
-            margin-bottom: 20px;
+            margin-bottom: rem-calc(20);
             font-family: $title-font;
             font-weight: 400;
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: 1300px) {
                 text-align: center;
             }
         }
         .footer-nav{
-            margin: 10px 0;
-            list-style-type: none;
-            @media screen and (min-width: 768px) {
+            margin: rem-calc(10) 0;
+            @media screen and (min-width: 1300px) {
                 display: flex;
                 justify-content: center;
             }
-            &:nth-child(1) i,
-            &:nth-child(2) i{
-                margin-right: 5px;
-                width: 30px;
-            }
             &__item{
-                margin-bottom: 3px;
-                @media screen and (min-width: 768px) {
-                    margin: 0 40px;
+                margin-bottom: rem-calc(3);
+                @media screen and (min-width: 1300px) {
+                    margin: 0 rem-calc(40);
                 }
-            }
-            a{
-                color: white;
-                transition: color 0.4s ease-in-out;
-                &:hover{
-                    color: $light-primary-color;
+                    &:nth-child(1)::before{
+                        content: '\f2e7';
+                        font-family: 'FontAwesome';
+                        margin-right: rem-calc(10);
+                        font-size: clamp(1.5rem, 2vw, 2rem);
+                    }
+                    &:nth-child(2)::before{
+                        content: '\f4c4';
+                        font-family: 'FontAwesome';
+                        margin-right: rem-calc(10);
+                        font-size: clamp(1.5rem, 2vw, 2rem);
+                    }
+                    a{
+                        transition: color 0.4s ease-in-out;
+                        &:hover{
+                            color: $light-primary-color;
+                            }
                     }
             }
         }

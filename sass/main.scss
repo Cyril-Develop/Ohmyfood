@@ -1,7 +1,8 @@
 @import "./Base/reset";
 @import "./utils/variables";
-@import "./utils/mixins";
 @import "./Base/base";
+@import "./utils/functions";
+@import "./utils/mixins";
 @import "./utils/animations";
 @import "./Components/new-card";
 @import './Layout/loader';
@@ -12,13 +13,13 @@
 // Section main-location
 
 .main-location{
-    height: 70px;
+    height: rem-calc(70);
     background-color: #EAEAEA;
     @include flex-center;
     p::before{
         content: '\f3c5';
         font-family: 'FontAwesome';
-        margin-right: 2rem;
+        margin-right: rem-calc(15);
     }
 }
 
@@ -26,19 +27,19 @@
 
 .main-description{
     flex-direction: column;
-    padding: 50px 20px 60px;
+    padding: rem-calc(50) rem-calc(20) rem-calc(60);
     text-align: center;
     background-color: #F6F6F6;
     @include flex-center;
         &__text{
-            margin: 15px 0 35px;
+            margin: rem-calc(15) 0 rem-calc(35);
             font-weight: 300;
         }
         &__btn{
             @include base-shadow;
             @include button-style;
             @media screen and (min-width:768px) {
-                padding: 20px;
+                padding: rem-calc(20);
             }
             &:hover{
                 @include button-hover;       
@@ -51,10 +52,10 @@
 .main-process{
     @include flex-center;
     flex-direction: column;
-    padding: 40px 20px;
+    padding: rem-calc(40) rem-calc(20);
         h2{
             align-self: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: rem-calc(25);
             @media screen and (min-width: 768px) {
                 align-self: center;
             }
@@ -68,16 +69,19 @@
     flex-direction: row-reverse;
     position: relative;
     width: 100%;
-    max-width: 691px;
-    margin-bottom: 25px;
-    padding: 15px 15px 15px 0;
-    border-radius: 20px;
+    max-width: rem-calc(691);
+    margin-bottom: rem-calc(25);
+    padding: rem-calc(15) rem-calc(15) rem-calc(15) 0;
+    border-radius: rem-calc(20);
     cursor: pointer;
     background-color: #F6F6F6;
     transition: all 0.4s ease-in-out;
     @include base-shadow;
     @media screen and (min-width: 768px) {
         justify-content: center; 
+    }
+    p{
+        font-size: clamp(1.1rem, 2vw, 1.6rem);
     }
         &:nth-child(2)::after{
             content: '\f3cf';
@@ -100,16 +104,16 @@
         &__number{
             @include flex-center;
             position: absolute;
-            left: -12px;
-            width: 25px;
-            height: 25px;
+            left: rem-calc(-12);
+            width: rem-calc(25);
+            height: rem-calc(25);
             border-radius: 50%;
-            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
             color: white;
             background-color: $color-primary;
             @media screen and (min-width: 768px) {
-                width: 30px;
-                height: 30px;
+                width: rem-calc(35);
+                height: rem-calc(35);
             }
         }    
 }
@@ -117,21 +121,21 @@
 // Section main-restaurants
 
 .main-restaurant{
-    padding: 50px 20px 40px;
+    padding: rem-calc(50) rem-calc(20) rem-calc(40);
     background-color: #F6F6F6;
     h2{
-        margin-bottom: 10px;
+        margin-bottom: rem-calc(10);
         @media screen and (min-width: 768px) {
             text-align: center;
         }
     }
     a{
         width: 100%;
-        max-width: 650px;
-        height: 300px;
-        border-radius: 20px;
+        max-width: rem-calc(650);
+        height: rem-calc(300);
+        border-radius: rem-calc(20);
         overflow: hidden;
-        margin: 20px 0;
+        margin: rem-calc(20) 0;
         color: black;
         @include base-shadow;
             figure{
@@ -146,25 +150,32 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 0 50px;
+        gap: 0 rem-calc(50);
         margin: 0 auto;
         width: 100%;
-        max-width: 2000px;
+        max-width: rem-calc(2000);
     }
 }
 
 .card__info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 30%;
-    padding: 15px 20px;
+    padding: rem-calc(10) rem-calc(15);
     p{
+        font-size: clamp(1.2rem, 2vw, 1.7rem);
+    }
+    h3{
         display: flex;
         align-items: center;
-        justify-content: space-between
+        justify-content: space-between;
     }
     &__heart{
         @include flex-center;
-        width: 30px;
-        height: 30px;
+        width: rem-calc(30);
+        height: rem-calc(30);
         &::before{
             @include heart;
         }
