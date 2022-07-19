@@ -1,3 +1,5 @@
+![formation](./assets/screenshot/OpenClassRooms.png)
+
 # Formation Dev Web OpenClassRooms
 
 
