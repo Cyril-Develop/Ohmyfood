@@ -608,9 +608,6 @@ header .header__return::before {
     margin-top: 2.5rem;
   }
 }
-.meal:nth-child(1) {
-  animation-delay: 100ms;
-}
 .meal:nth-child(2) {
   animation-delay: 200ms;
 }
