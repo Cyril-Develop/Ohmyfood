@@ -6,7 +6,7 @@
 
 
 
-![screenshot du site](./assets/screenshot.jpg)
+![screenshot du site](./assets/screenshot/screenshot.jpg)
 
 
 
