@@ -16,7 +16,6 @@
 - SASS
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Cyril-Develop/Ohmyfood.github.io?style=for-the-badge)
-
 ## Tester le projet :
 
 ```terminal
