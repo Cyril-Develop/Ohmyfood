@@ -115,7 +115,7 @@ header{
     @media screen and (min-width: 1300px) {
         margin-top: rem-calc(40);
     }
-    @for $i from 1 through 4{
+    @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: 100ms * $i;
         }

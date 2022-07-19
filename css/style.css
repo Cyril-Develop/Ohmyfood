@@ -620,6 +620,9 @@ header .header__return::before {
 .meal:nth-child(4) {
   animation-delay: 400ms;
 }
+.meal:nth-child(5) {
+  animation-delay: 500ms;
+}
 .meal__description {
   white-space: nowrap;
   overflow: hidden;
