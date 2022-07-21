@@ -36,7 +36,7 @@ footer{
                     }
                     a{
                         transition: color 0.4s ease-in-out;
-                        &:hover{
+                        &:hover, &:focus{
                             color: $light-primary-color;
                             }
                     }

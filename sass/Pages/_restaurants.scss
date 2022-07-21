@@ -1,17 +1,17 @@
 // Header
 
-header{
+.header{
     position: relative;
-    .header__return::before{
-        content: '\f060';
-        font-family: 'FontAwesome';
-        color: #333;
-        font-size: clamp(1.5rem, 2vw, 2rem);
-        position: absolute;
-        left: 0;
-        transform: translateY(-50%);
-        left: 5%;
-    }
+        &__return{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5%;
+            padding: 5px;
+                i{
+                    font-size: clamp(1.5rem, 2vw, 2rem);
+                }
+        }
 }
     
     .main{
@@ -167,10 +167,12 @@ header{
                     }
                 }
                 }
-                &:hover &__check{
+                &:hover &__check,
+                &:focus &__check{
                     margin-right: 0;
                 }
-                &:hover &__check::after{
+                &:hover &__check::after,
+                &:focus &__check::after{
                     transform: rotate(360deg);
                 }
 
