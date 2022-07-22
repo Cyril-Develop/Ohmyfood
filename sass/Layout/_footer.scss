@@ -1,4 +1,4 @@
-footer{
+.footer{
     padding: rem-calc(30) rem-calc(20);
     color: white;
     background-color: #333;
@@ -10,13 +10,13 @@ footer{
                 text-align: center;
             }
         }
-        .footer-nav{
+        &__nav{
             margin: rem-calc(10) 0;
             @media screen and (min-width: 1300px) {
                 display: flex;
                 justify-content: center;
             }
-            &__item{
+            li{
                 margin-bottom: rem-calc(3);
                 @media screen and (min-width: 1300px) {
                     margin: 0 rem-calc(40);
