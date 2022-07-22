@@ -19,16 +19,20 @@
 }
 
 @keyframes visibility {
-    to{
+    90%{
+        opacity: 1;
+    }
+    100%{
         opacity: 0;
     }
 }
 
 @keyframes text {
-    30%{
+    to{
         opacity: 0;
     }
 }
+
 
 @keyframes appear {
     from{
