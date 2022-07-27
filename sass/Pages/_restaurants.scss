@@ -19,6 +19,9 @@
             max-height: 55vh;
             min-height: 30vh;
         }
+        &__location h3{
+            font-weight: 400;
+        }
         &__menu{  
             display: flex;
             flex-direction: column;
