@@ -21,5 +21,5 @@
 ## Tester le projet :
 
 ```terminal
-git clone https://github.com/Cyril-Develop/Ohmyfood.github.io.git
+git clone https://github.com/Cyril-Develop/Ohmyfood.git
 ```
