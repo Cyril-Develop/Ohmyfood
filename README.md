@@ -4,13 +4,13 @@
 
 
 
-## Projet 3: OhMyFood
+## 📎 Projet 3: OhMyFood
 
 
 
-![screenshot du site](./assets/screenshot/screenshot.jpg)
+![screenshot du site](./assets/screenshot/accueil.jpg)
 
-
+![screenshot du site](./assets/screenshot/restaurant.jpg)
 
 ## Technologies :
 - HTML
