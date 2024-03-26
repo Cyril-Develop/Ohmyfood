@@ -4,7 +4,7 @@
 
 
 
-## 📎 Projet 3 : OhMyFood
+## 📎 Projet 3 : OhMyFood - Dynamisez une page web avec des animations CSS
 
 
 
